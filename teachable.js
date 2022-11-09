@@ -52,6 +52,7 @@ async function predict() {
   if (prediction[0].probability.toFixed(2) >= 0.95) {
     if (status == "squat") {
       count++;
+      document.querySelector(".txtCount").innerHTML = count;
     }
     status = "stand";
   } else if (prediction[1].probability.toFixed(2) >= 0.95) {
