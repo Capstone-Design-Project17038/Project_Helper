@@ -21,6 +21,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+#container {
+  display: flex;
+}
+
 .center {
   position: absolute;
   top: 50%;

@@ -8,26 +8,30 @@
     <title>Document</title>
   </head>
   <body>
-    <div>Teachable Machine Pose Model</div>
-    <button type="button" onclick="init()">Start</button>
-    <div><canvas id="canvas"></canvas></div>
-    <div id="label-container"></div>
-    <div id="counter">0</div>
-    <div class="frame">
-      <div class="center">
-        <div class="headline">Count</div>
-        <div class="circle-big">
-          <div class="text">
-            0
-            <div class="small">count</div>
+    <div id="container">
+      <div id="detection">
+        <div>Teachable Machine Pose Model</div>
+        <button type="button" onclick="init()">Start</button>
+        <div><canvas id="canvas"></canvas></div>
+        <div id="label-container"></div>
+      </div>
+      <div class="frame">
+        <div class="center">
+          <div class="headline">Count</div>
+          <div class="circle-big">
+            <div class="text">
+              0
+              <div class="small">count</div>
+            </div>
+            <svg>
+              <circle class="bg" cx="57" cy="57" r="52" />
+              <circle class="progress" cx="57" cy="57" r="52" />
+            </svg>
           </div>
-          <svg>
-            <circle class="bg" cx="57" cy="57" r="52" />
-            <circle class="progress" cx="57" cy="57" r="52" />
-          </svg>
         </div>
       </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
     <script src="./teachable.js"></script>
