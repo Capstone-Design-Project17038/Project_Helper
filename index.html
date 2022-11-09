@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/counter.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
+    <script src="./teachable.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -22,7 +23,7 @@
           <div class="headline">Count</div>
           <div class="circle-big">
             <div class="text">
-              0
+              <div class="txtCount" onclick="plus()">0</div>
               <div class="small">count</div>
             </div>
             <svg>
@@ -33,6 +34,5 @@
         </div>
       </div>
     </div>
-    <script src="./teachable.js"></script>
   </body>
 </html>
