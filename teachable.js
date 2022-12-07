@@ -43,6 +43,7 @@ async function loop(timestamp) {
 
 var status = "stand";
 var count = 0;
+
 async function predict() {
   // Prediction #1: run input through posenet
   // estimatePose can take in an image, video or canvas html element
@@ -53,11 +54,17 @@ async function predict() {
     if (status == "squat") {
       count++;
       document.querySelector(".txtCount").innerHTML = count;
+      var audio = new Audio(count%10 + '.mp3');
+      audio.play();
     }
     status = "stand";
   } else if (prediction[1].probability.toFixed(2) >= 0.95) {
     status = "squat";
   } else if (prediction[2].probability.toFixed(2) >= 0.95) {
+    if(status == "squat" || status == "stand"){
+      var audio = new Audio('bent.mp3');
+      audio.play();
+    }
     status = "bent";
   }
   for (let i = 0; i < maxPredictions; i++) {
