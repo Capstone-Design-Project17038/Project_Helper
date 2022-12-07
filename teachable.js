@@ -54,15 +54,15 @@ async function predict() {
     if (status == "squat") {
       count++;
       document.querySelector(".txtCount").innerHTML = count;
-      var audio = new Audio('tts/' + count%10 + '.mp3');
+      var audio = new Audio("tts/" + (count % 10) + ".mp3");
       audio.play();
     }
     status = "stand";
   } else if (prediction[1].probability.toFixed(2) >= 0.95) {
     status = "squat";
   } else if (prediction[2].probability.toFixed(2) >= 0.95) {
-    if(status == "squat" || status == "stand"){
-      var audio = new Audio('tts/bent.mp3');
+    if (status == "squat" || status == "stand") {
+      var audio = new Audio("tts/bent.mp3");
       audio.play();
     }
     status = "bent";
@@ -87,3 +87,5 @@ function drawPose(pose) {
     }
   }
 }
+
+init();
