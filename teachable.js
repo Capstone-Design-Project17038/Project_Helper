@@ -54,7 +54,7 @@ async function predict() {
     if (status == "squat") {
       count++;
       document.querySelector(".txtCount").innerHTML = count;
-      var audio = new Audio(count%10 + '.mp3');
+      var audio = new Audio('tts/' + count%10 + '.mp3');
       audio.play();
     }
     status = "stand";
@@ -62,7 +62,7 @@ async function predict() {
     status = "squat";
   } else if (prediction[2].probability.toFixed(2) >= 0.95) {
     if(status == "squat" || status == "stand"){
-      var audio = new Audio('bent.mp3');
+      var audio = new Audio('tts/bent.mp3');
       audio.play();
     }
     status = "bent";
