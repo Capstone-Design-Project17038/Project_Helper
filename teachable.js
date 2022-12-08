@@ -17,8 +17,8 @@ async function init() {
 
   // Convenience function to setup a webcam
   //const size = 300;
-  const width = 1200;
-  const height = 800;
+  const width = 900;
+  const height = 600;
   const flip = true; // whether to flip the webcam
   webcam = new tmPose.Webcam(width, height, flip); // width, height, flip
   await webcam.setup(); // request access to the webcam
@@ -62,10 +62,10 @@ async function predict() {
     status = "stand";
   } else if (prediction[1].probability.toFixed(2) >= 0.95) {
     status = "squat";
-  } else if (prediction[2].probability.toFixed(2) >= 0.95) {
+  } else if (prediction[2].probability.toFixed(2) >= 1) {
     if (status == "squat" || status == "stand") {
-      var audio = new Audio("tts/bent.mp3");
-      audio.play();
+      //var audio = new Audio("tts/bent.mp3");
+      //audio.play();
     }
     status = "bent";
   }
