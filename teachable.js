@@ -60,12 +60,12 @@ async function predict() {
       audio.play();
       if(count == 7){
         var audio = new Audio("tts/응원.mp3");
-        audio.play();
+        setTimeout(() => audio.play(), 2500);
       }
       else if(count == 10)
       {
         var audio = new Audio("tts/finish.mp3");
-        audio.play();
+        setTimeout(() => audio.play(), 2500);
       }
     }
     status = "stand";
