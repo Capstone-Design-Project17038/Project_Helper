@@ -58,6 +58,15 @@ async function predict() {
       document.querySelector(".txtCount").innerHTML = count;
       var audio = new Audio("tts/" + (count % 10) + ".mp3");
       audio.play();
+      if(count == 7){
+        var audio = new Audio("tts/응원.mp3");
+        audio.play();
+      }
+      else if(count == 10)
+      {
+        var audio = new Audio("tts/finish.mp3");
+        audio.play();
+      }
     }
     status = "stand";
   } else if (prediction[1].probability.toFixed(2) >= 0.95) {
