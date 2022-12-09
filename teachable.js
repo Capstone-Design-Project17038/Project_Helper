@@ -60,7 +60,7 @@ async function predict() {
       audio.play();
       if(count == 7){
         var audio = new Audio("tts/응원.mp3");
-        setTimeout(() => audio.play(), 1500);
+        setTimeout(() => audio.play(), 1000);
       }
       else if(count == 10)
       {
